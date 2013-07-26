@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="" basedir="." default="jar">
+    <property name="work.home" value="${basedir}/work"/>
+    <property name="dist.home" value="${basedir}/dist"/>
+    <property name="src.home" value="${basedir}/src"/>
+
+    <target name="compile">
+        <mkdir dir="${work.home}"/>
+        <javac srcdir="${src.home}"
+               destdir="${work.home}">
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${dist.home}"/>
+        <jar jarfile="${dist.home}/exercise.jar"
+             basedir="${work.home}"/>
+    </target>
+</project>
